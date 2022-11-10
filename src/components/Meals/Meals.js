@@ -13,10 +13,15 @@ const Meals = ({ searchText }) => {
   }, [searchText]);
 
   const handleAddToCart = (cartData) => {
-    const newCartData = [...cart, cartData];
-    setCart(newCartData);
+    const quantity = cart.find((cart) => cart.idMeal === cartData.idMeal);
+    if (quantity) {
+      quantity.quantity = quantity.quantity + 1;
+    } else {
+      const newCartData = [...cart, cartData];
+      setCart(newCartData);
+    }
   };
-
+  console.log(cart);
   return (
     <div>
       {meals && (

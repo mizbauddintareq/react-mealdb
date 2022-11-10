@@ -3,6 +3,7 @@ const Meal = ({ data, handleAddToCart }) => {
   const info = {
     strMeal,
     strArea,
+    idMeal,
     quantity: 1,
   };
   return (
@@ -14,7 +15,7 @@ const Meal = ({ data, handleAddToCart }) => {
         <h2 className="card-title">
           {strMeal}
           <div className="badge badge-secondary">
-            {strArea ? strMeal : "Not Found"}
+            {strArea ? strArea : "Not Found"}
           </div>
         </h2>
         <p>
