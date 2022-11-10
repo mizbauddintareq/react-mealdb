@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Cart from "../Cart/Cart";
 import Meal from "../Meal/Meal";
 
 const Meals = ({ searchText }) => {
@@ -15,7 +16,7 @@ const Meals = ({ searchText }) => {
     const newCartData = [...cart, cartData];
     setCart(newCartData);
   };
-  console.log(cart);
+
   return (
     <div>
       {meals && (
@@ -31,8 +32,15 @@ const Meals = ({ searchText }) => {
               ))}
             </div>
           </div>
-          <div className="basis-1/4">
-            <h1>Cart container</h1>
+          <div className="basis-1/4 ml-20">
+            <div className="bg-pink-100 h-screen fixed p-10">
+              <h1 className="text-4xl text-center font-semibold mb-10">
+                Order Summary
+              </h1>
+              {cart.map((data) => (
+                <Cart key={Math.random()} cartData={data} />
+              ))}
+            </div>
           </div>
         </div>
       )}

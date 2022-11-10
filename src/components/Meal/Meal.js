@@ -1,5 +1,5 @@
 const Meal = ({ data, handleAddToCart }) => {
-  const { strMeal, strArea, strTags, strMealThumb } = data;
+  const { idMeal, strMeal, strArea, strTags, strMealThumb } = data;
   const info = {
     strMeal,
     strArea,
